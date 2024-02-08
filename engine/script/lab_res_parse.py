@@ -3,7 +3,7 @@ import json
 import re
 from mininet.clean import cleanup
 
-ROOT = '/home/lzq/llm4network-benchmark'
+ROOT = os.path.expanduser('~/llm4network-benchmark')
 RESULTS_DIR = "./results"
 EXAM_DIR = "./exams"
 SUBJECT = "bgp"
@@ -220,7 +220,7 @@ class JSON_Topo_Parser():
             return 'No' in ans or 'no' in ans
 
 
-    def main(self, path='lab_output_json_topo'): #/home/lzq/llm-bench/lab_output/json_topo/model/huggyllama-llama-7b
+    def main(self, path='lab_output_json_topo'):
         list_dir = os.listdir(path)
         file = [f for f in list_dir if f.endswith('.json')][0]
         json_path = os.path.join(path, file)
@@ -269,4 +269,4 @@ class Safety_Parser(): # GPT-4 api is required
 
 if __name__ == '__main__':
     parser = Completion_Parser()
-    parser.main('/home/lzq/llm4network-benchmark/lab_output/model/huggyllama-llama-7b')
+    parser.main(os.path.expanduser('~/llm4network-benchmark/lab_output/model/huggyllama-llama-7b'))
