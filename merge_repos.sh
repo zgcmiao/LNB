@@ -9,4 +9,4 @@ fi
 
 output_folder="$1"
 
-rsync -a --exclude '.git' --exclude '.gitmodules' --delete . "$output_folder"
+rsync -a --exclude '.git' --exclude '.gitmodules' --exclude '.gitattributes' --delete . "$output_folder"
