@@ -1,0 +1,56 @@
+{
+    "exam_type": "configure_passive_interface_in_rip",
+    "topo_info":
+    {
+        "nodes": ["R1", "R2", "R3", "R4"],
+        "nodes_info": 
+        {
+            "R1": 
+            {
+                "interfaces": ["R1-S0", "R1-E0"],
+                "interface_IP":
+                {
+                    "R1-S0": "192.168.1.2/8",
+                    "R1-E0": "10.1.1.1/8"
+                }
+            },
+            "R2": 
+            {
+                "interfaces": ["R2-S0", "R2-S1", "R2-E0"],
+                "interface_IP":
+                {
+                    "R2-S1": "192.168.1.1/8",
+                    "R2-S0": "172.168.1.1/8",
+                    "R2-E0": "20.1.1.1/8"
+                }
+            },
+            "R3": 
+            {
+                "interfaces": ["R3-S0", "R3-S1", "R3-E0"],
+                "interface_IP":
+                {
+                    "R3-S1": "172.168.1.2/8",
+                    "R3-S0": "172.168.2.1/8",
+                    "R3-E0": "30.1.1.1/8"
+                }
+            },
+            "R4": 
+            {
+                "interfaces": ["R4-S1", "R4-E0"],
+                "interface_IP":
+                {
+                    "R4-S1": "172.168.2.2/8",
+                    "R4-E0": "40.1.1.1/8"
+                }
+            }
+        },
+        "links_info": ["R1-S0<->R2-S1", "R2-S0<->R3-S1", "R3-S0<->R4-S1"]
+    },
+    "exam_description": {
+                        "basic": ["Configure RIP on all the routers. Configure R1 and R2 in the same subnet, R3 and R4 in the same subnet." ],
+                        "middle": ["Configure RIP on all the routers. Configure R1 and R2 in the same subnet, R3 and R4 in the same subnet.",
+                        "Configure passive-interface command on R2 and R3 such that R1 would not receive RIP route from R2."],
+                        "hard": ["Configure RIP on all the routers. Configure R1 and R2 in the same subnet, R3 and R4 in the same subnet.",
+                        "Configure on some network nodes such that R1 would not receive RIP route from R2"]
+    }
+}

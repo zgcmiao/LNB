@@ -1,0 +1,42 @@
+{
+    "exam_type": "configuring_abr_and_asbr",
+    "topo_info":
+    {
+        "nodes": ["R1", "R2", "R3"],
+        "nodes_info": 
+        {
+            "R1": 
+            {
+                "interfaces": ["R1-S0",  "R1-E0"],
+                "interface_IP":
+                {
+                    "R1-S0": "1.1.1.1/8",
+                    "R1-E0": "10.1.1.1/8"
+                }
+            },
+            "R2": 
+            {
+                "interfaces": ["R2-S0", "R2-S1", "R2-E0"],
+                "interface_IP":
+                {
+                    "R2-S0": "1.1.1.2/8",
+                    "R2-S1": "2.2.2.1/8",
+                    "R2-E0": "20.1.1.1/8"
+                }
+            },
+            "R3": 
+            {
+                "interfaces": ["R3-S0", "R3-E0"],
+                "interface_IP":
+                {
+                    "R3-S0": "2.2.2.2/8",
+                    "R3-E0": "30.1.1.1/8"
+                }
+            }
+        },
+        "links_info": ["R1-S0<->R2-S0", "R2-S1<->R3-S0"]
+    },
+    "exam_description": ["Advertise all subnetworks of interfaces on all nodes.",
+                        "Configure OSPF in Area 0 on R1-S0, R2-S0, R2-E0, Configure OSPF in Area 1 on R1-E0, Configure OPSF in Area 2 on R2-S1, R3-S0, R3-E0",
+                        "Configure EIGRP AS 100 on R2-E0 and redistribute into OSPF."]
+}

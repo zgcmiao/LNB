@@ -1,0 +1,13 @@
+.git/
+__pycache__
+output/
+analyze/
+netops-exam/
+result/
+.vscode/
+README.md
+.idea/
+.dockerignore
+.gitignore
+.gitlab-ci.yml
+Dockerfile

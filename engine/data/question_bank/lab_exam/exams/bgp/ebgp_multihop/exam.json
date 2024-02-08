@@ -1,0 +1,30 @@
+{
+    "exam_type": "ebgp_multihop",
+    "topo_info":
+    {
+        "nodes": ["R1", "R2"],
+        "nodes_info": 
+        {
+            "R1": 
+            {
+                "interfaces": ["R1-S0", "R1-E0"],
+                "interface_IP":
+                {
+                    "R1-S0": "1.1.1.1/8",
+                    "R1-E0": "10.1.1.1/8"
+                }
+            },
+            "R2": 
+            {
+                "interfaces": ["R2-S0", "R2-E0"],
+                "interface_IP":
+                {
+                    "R2-S0": "1.1.1.2/8",
+                    "R2-E0": "20.1.1.1/8"
+                }
+            }
+        },
+        "links_info": ["R1-S0<->R2-S0"]
+    },
+    "exam_description": ["Configure a BGP neighbor relationship between R1 and R2. R1 should be configured in AS 100 and R2 should be in AS 200. Establish the neighbor relationship between peers that are not directly connected. You are allowed to create a static route on each router to accomplish this task."]
+}

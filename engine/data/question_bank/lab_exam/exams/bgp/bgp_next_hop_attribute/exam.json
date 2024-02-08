@@ -1,0 +1,50 @@
+{
+    "exam_type": "bgp_next_hop_attribute",
+    "topo_info":
+    {
+        "nodes": ["R1", "R2", "R3"],
+        "nodes_info": 
+        {
+            "R1": 
+            {
+                "interfaces": ["R1-S0", "R1-E0"],
+                "interface_IP":
+                {
+                    "R1-S0": "1.1.1.1/8",
+                    "R1-E0": "10.1.1.1/8"
+                }
+            },
+            "R2": 
+            {
+                "interfaces": ["R2-S0", "R2-S1", "R2-E0"],
+                "interface_IP":
+                {
+                    "R2-S0": "1.1.1.2/8",
+                    "R2-S1": "2.2.2.1/8",
+                    "R2-E0": "20.1.1.1/8"
+                }
+            },
+            "R3": 
+            {
+                "interfaces": ["R3-S0", "R3-E0"],
+                "interface_IP":
+                {
+                    "R3-S0": "2.2.2.2/8",
+                    "R3-E0": "30.1.1.1/8"
+                }
+            }
+        },
+        "links_info": ["R1-S0<->R2-S0", "R2-S1<->R3-S0"]
+    },
+    "exam_description": {
+            "basic": ["Configure BGP on the routers as per the above scenario. Advertise all networks on all router nodes",
+                "R1 advertises network 10.0.0.0 to R2 with the next hop of 1.1.1.1 and R2 advertises network 20.0.0.0 to R1 with the next hop of 1.1.1.2.",
+                "For iBGP, the protocol states that the next hop that eBGP advertises, should be carried into iBGP, because of this rule, R2 advertises network 10.0.0.0 to its iBGP peer R3 with a next hop of 1.1.1.1. Therefore for R3, the next hop to reach network 10.0.0.0 is via 1.1.1.1 and not 2.2.2.1.",
+                "Make sure that R3 can reach network 10.0.0.0 via IGP, otherwise R3 drops packets with the destination of 10.0.0.0 or advertise via network commands in BGP."],
+            "middle": ["Configure BGP on the routers as per the above scenario. Advertise all networks on all router nodes",
+                "Configure BGP such that R2 advertises its updates to iBGP peers via 2.2.2.1 instead of 1.1.1.1",
+                "You can use the next-hop-self command to accomplish this task"],
+            "hard": ["Configure BGP on the routers as per the above scenario. Advertise all networks on all router nodes",
+            "Configure BGP such that R2 advertises its updates to iBGP peers via 2.2.2.1 instead of 1.1.1.1"]
+    }
+}

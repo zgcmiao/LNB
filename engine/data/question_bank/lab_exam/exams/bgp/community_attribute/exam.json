@@ -1,0 +1,56 @@
+{
+    "exam_type": "community_attribute",
+    "topo_info":
+    {
+        "nodes": ["R1", "R2", "R3", "R4"],
+        "nodes_info": 
+        {
+            "R1": 
+            {
+                "interfaces": ["R1-S0", "R1-E0"],
+                "interface_IP":
+                {
+                    "R1-S0": "1.1.1.1/8",
+                    "R1-E0": "10.1.1.1/8"
+                }
+            },
+            "R2": 
+            {
+                "interfaces": ["R2-S0", "R2-S1", "R2-S2", "R2-E0"],
+                "interface_IP":
+                {
+                    "R2-S0": "3.3.3.1/8",
+                    "R2-S1": "1.1.1.2/8",
+                    "R2-S2": "2.2.2.1/8",
+                    "R2-E0": "20.1.1.1/8"
+                }
+            },
+            "R3": 
+            {
+                "interfaces": ["R3-S0", "R3-E0"],
+                "interface_IP":
+                {
+                    "R3-S0": "2.2.2.2/8",
+                    "R3-E0": "30.1.1.1/8"
+                }
+            },
+            "R4": 
+            {
+                "interfaces": ["R4-S0", "R4-E0"],
+                "interface_IP":
+                {
+                    "R4-S0": "3.3.3.2/8",
+                    "R4-E0": "40.1.1.1/8"
+                }
+            }
+        },
+        "links_info": ["R1-S0<->R2-S1", "R3-S0<->R2-S2", "R4-S0<->R2-S0"]
+    },
+    "exam_description": {
+                            "basic": ["Configure BGP on 4 routers. Configure R1, R2 and R4 in AS 100. Advertise all networks on all nodes"],
+                            "middle": ["Configure BGP on all the routers. Configure R1, R2 and R4 in AS 100. Configure R3 in AS 200. Advertise all networks on all nodes",
+                                    "Configure community_attribute on R1. Set the community_attribute of network 10.0.0.0 to be 100:1"],
+                            "hard": ["Configure BGP on all the routers. Configure R1, R2 and R4 in AS 100. Configure R3 in AS 200.",
+                                    "Configure community_attribute and route-map such that R1's network 10.0.0.0/8 would not be advertised to external AS."]
+                        }
+}

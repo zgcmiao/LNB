@@ -1,0 +1,12 @@
+You are a configuration generation assistant. Please generate configurations for each router in the following topology to meet the specific intent.
+
+Intent: AS1 establishes an EBGP connection with AS2. AS1 has multiple subnets, while AS2 can only access the subnet "192.168.1.0/24". Configure route advertisement so that AS1 dvertises an aggregated prefix '192.168.0.0/24' to AS2.
+
+Topology：
+{"nodes":[{"RouterA": {"AS": 1}}}, {'RouterB': {'AS': 2}}],
+        'edge': [{'node1': {'name': 'RouterA', 'interfaceName': 'GE0/0/0', 'IP address': '10.1.13.1/24'},
+                 'node2': {'name': 'RouterB', 'interfaceName': 'GE0/0/0', 'IP address': '10.1.13.2/24'}},
+                ]}
+
+
+Please directly output each router's configurations without providing any additional information such as comments.

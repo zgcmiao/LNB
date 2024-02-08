@@ -1,0 +1,43 @@
+{
+    "exam_type": "configuring_med",
+    "topo_info":
+    {
+        "nodes": ["R1", "R2", "R3"],
+        "nodes_info": 
+        {
+            "R1": 
+            {
+                "interfaces": ["R1-S0", "R1-S1", "R1-E0"],
+                "interface_IP":
+                {
+                    "R1-S0": "1.1.1.1/8",
+                    "R1-S1": "3.3.3.1/8",
+                    "R1-E0": "10.1.1.1/8"
+                }
+            },
+            "R2": 
+            {
+                "interfaces": ["R2-S0", "R2-S1", "R2-E0"],
+                "interface_IP":
+                {
+                    "R2-S0": "1.1.1.2/8",
+                    "R2-S1": "2.2.2.1/8",
+                    "R2-E0": "20.1.1.1/8"
+                }
+            },
+            "R3": 
+            {
+                "interfaces": ["R3-S0", "R3-S1", "R3-E0"],
+                "interface_IP":
+                {
+                    "R3-S0": "2.2.2.2/8",
+                    "R3-S1": "3.3.3.2/8",
+                    "R3-E0": "30.1.1.1/8"
+                }
+            }
+        },
+        "links_info": ["R1-S0<->R2-S0", "R1-S1<->R3-S1", "R2-S1<->R3-S0"]
+    },
+    "exam_description": ["R1 and R3 are in AS 100, R2 is in AS 200.",
+                        "All outgress traffic from R2 destined to R1 should use the path through R3 using the MED attribute. Configure the MED on R1 to 100 and Configure the MED on R3 to 50. Notice Lower MED will be preferred."]
+}

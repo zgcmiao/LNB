@@ -1,0 +1,61 @@
+{
+    "exam_type": "as_path_attribute",
+    "topo_info":
+    {
+        "nodes": ["R1", "R2", "R3", "R4"],
+        "nodes_info": 
+        {
+            "R1": 
+            {
+                "interfaces": ["R1-S0", "R1-S1", "R1-E0"],
+                "interface_IP":
+                {
+                    "R1-S0": "1.1.1.1/8",
+                    "R1-S1": "3.3.3.1/8",
+                    "R1-E0": "10.1.1.1/8"
+                }
+            },
+            "R2": 
+            {
+                "interfaces": ["R2-S0", "R2-S1", "R2-E0"],
+                "interface_IP":
+                {
+                    "R2-S0": "1.1.1.2/8",
+                    "R2-S1": "2.2.2.1/8",
+                    "R2-E0": "20.1.1.1/8"
+                }
+            },
+            "R3": 
+            {
+                "interfaces": ["R3-S0", "R3-S1","R3-E0"],
+                "interface_IP":
+                {
+                    "R3-S0": "2.2.2.2/8",
+                    "R3-S1": "4.4.4.2/8",
+                    "R3-E0": "30.1.1.1/8"
+                }
+            },
+            "R4": 
+            {
+                "interfaces": ["R4-S0", "R4-S1","R4-E0"],
+                "interface_IP":
+                {
+                    "R4-S0": "3.3.3.2/8",
+                    "R4-S1": "4.4.4.1/8",
+                    "R4-E0": "40.1.1.1/8"
+                }
+            }
+        },
+        "links_info": ["R1-S0<->R2-S0", "R2-S1<->R3-S0", "R3-S1<->R4-S0", "R4-S1<->R1-S1"]
+    },
+    "exam_description": {
+                            "basic": ["Configure BGP on 4 routers. Configure R1 in AS 100. Configure R2 in AS 200. Configure R3 in AS 300. Configure R4 in AS 400.",
+                                    "Configure BGP peers between all directly connected nodes based on topology description"],
+                            "middle": ["Configure BGP on all the routers. Configure R1, R2 and R4 in AS 100. Configure R3 in AS 200.",
+                                    "Configure BGP peers between all directly connected nodes based on topology description",
+                                    "Manipulate the routing information on R4 to reach network 30.0.0.0/8 via R1-S1. You can use as-path prepend command using route-map to accomplish this task."],
+                            "hard": ["Configure BGP on all the routers. Configure R1, R2 and R4 in AS 100. Configure R3 in AS 200.",
+                                    "Configure BGP peers between all directly connected nodes based on topology description",
+                                    "Configure BGP such that R4 reach network 30.0.0.0/8 via R1-S1."]
+                        }
+}

@@ -1,0 +1,15 @@
+You are a configuration generation assistant. Please generate configurations for each router in the following topology to meet the specific intent.
+
+Intent: Running BGP protocol between all routers. Configure AS5 as a neighbor of RouterA.
+
+
+Topology：
+{"nodes":[{"RouterA": {"AS": 1}}}, {'RouterB': {'AS': 2}}, {'RouterC': {'AS': 3}}],
+        'edge': [{'node1': {'name': 'RouterA', 'interfaceName': 'GE0/0/0', 'IP address': '10.1.13.1/24'},
+                 'node2': {'name': 'RouterB', 'interfaceName': 'GE0/0/0', 'IP address': '10.1.13.2/24'}},
+                 {'node1': {'name': 'RouterB', 'interfaceName': 'GE0/1/0', 'IP address': '10.1.45.4/24'},
+                  'node2': {'name': 'RouterC', 'interfaceName': 'GE0/1/0', 'IP address': '10.1.45.5/24'}}
+                ]}
+
+
+Please directly output each router's configurations without providing any additional information such as comments.

@@ -1,0 +1,2 @@
+Configure a BGP neighbor relationship between R1, R2 and R3. 
+R1 should be in AS 200, R2 should be in AS 100 and R3 should be in AS 200.

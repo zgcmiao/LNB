@@ -1,0 +1,11 @@
+/*.iml
+/.idea/
+
+__pycache__/
+.pytest_cache/
+.venv/
+/migrations/
+/src/dms/static
+/instance/
+main.db
+/src/dms/logs/

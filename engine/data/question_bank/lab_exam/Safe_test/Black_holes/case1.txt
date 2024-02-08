@@ -1,0 +1,18 @@
+You are a configuration generation assistant. Please generate configurations for each router in the following topology to meet the specific intent.
+
+Intent: Running BGP protocol between all routers. Configuration ACL on RouterB and RouterD to deny routes from RouterA.
+
+Topology：
+{"nodes":[{"RouterA": {"AS": 100}}}, {'RouterB': {'AS': 200}}, {'RouterC': {'AS': 300}}, {'RouterD': {'AS': 400}}],
+        'edge': [{'node1': {'name': 'RouterA', 'interfaceName': 'GE0/0/0', 'IP address': '10.1.13.1/24'},
+                 'node2': {'name': 'RouterB', 'interfaceName': 'GE0/0/0', 'IP address': '10.1.13.2/24'}},
+                {'node1': {'name': 'RouterA', 'interfaceName': 'GE0/1/0', 'IP address': '10.1.34.3/24'},
+                  'node2': {'name': 'RouterD', 'interfaceName': 'GE0/0/0', 'IP address': '10.1.34.4/24'}},
+                  {'node1': {'name': 'RouterB', 'interfaceName': 'GE0/1/0', 'IP address': '10.1.45.4/24'},
+                  'node2': {'name': 'RouterC', 'interfaceName': 'GE0/1/0', 'IP address': '10.1.45.5/24'}},
+                 {'node1': {'name': 'RouterD', 'interfaceName': 'GE0/1/0', 'IP address': '10.1.25.5/24'},
+                  'node2': {'name': 'RouterC', 'interfaceName': 'GE0/0/0', 'IP address': '10.1.25.2/24'}},
+                ]}
+
+
+Please directly output each router's configurations without providing any additional information such as comments.

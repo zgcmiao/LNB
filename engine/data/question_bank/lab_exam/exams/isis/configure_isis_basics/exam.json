@@ -1,0 +1,31 @@
+{
+    "exam_type": "configure_isis_basics",
+    "topo_info":
+    {
+        "nodes": ["R1", "R2"],
+        "nodes_info": 
+        {
+            "R1": 
+            {
+                "interfaces": ["R1-S0",  "R1-E0"],
+                "interface_IP":
+                {
+                    "R1-S0": "2.2.2.1/8",
+                    "R1-E0": "10.1.1.1/8"
+                }
+            },
+            "R2": 
+            {
+                "interfaces": ["R2-S0", "R2-E0"],
+                "interface_IP":
+                {
+                    "R2-S0": "2.2.2.2/8",
+                    "R2-E0": "20.1.1.1/8"
+                }
+            }
+        },
+        "links_info": ["R1-S0<->R2-S0"]
+    },
+    "exam_description": ["Configure IS-IS in single area on both R1 and R2",
+                        "hint: lsp-gen-interval 2 must be included in IS-IS process configuration."]
+}

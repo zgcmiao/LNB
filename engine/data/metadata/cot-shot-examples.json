@@ -1,0 +1,145 @@
+{
+  "id": "cot-shot-examples",
+  "title": "cot-shot-examples",
+  "questions": [
+    {
+      "title": "Question 1",
+      "content": "What is a global command?",
+      "choices": [
+        {
+          "name": "A",
+          "content": "a command that is set once and affects the entire router"
+        },
+        {
+          "name": "B",
+          "content": "a command that is implemented in all foreign and domestic IOS versions"
+        },
+        {
+          "name": "C",
+          "content": "a command that is universal in application and supports all protocols"
+        },
+        {
+          "name": "D",
+          "content": "a command that is available in every release of IOS, regardless of the version or deployment status"
+        },
+        {
+          "name": "E",
+          "content": "a command that can be entered in any configuration mode"
+        }
+      ],
+      "answer": {
+        "content": "<b>A</b>\n                                                Explanation:\nWhen you enter global configuration mode and enter a command, it is applied to the running configuration file that is currently running in ram. The configuration of a global command affects the entire router. An example of a global command is one used for the hostname of the router.",
+        "choice": "A"
+      },
+      "with_images": false
+    },
+    {
+      "title": "Question 2",
+      "content": "Which statement describes the effect of the exec-timeout 30 command?",
+      "choices": [
+        {
+          "name": "A",
+          "content": "The router maintains a user session indefinitely after it is active for 30 seconds."
+        },
+        {
+          "name": "B",
+          "content": "The router disconnects the user session if it is inactive for 30 minutes."
+        },
+        {
+          "name": "C",
+          "content": "The router maintains a user session indefinitely after it is active for 30 minutes."
+        },
+        {
+          "name": "D",
+          "content": "The router disconnects a user session if it is inactive for 30 seconds."
+        }
+      ],
+      "answer": {
+        "content": "<b>B</b>\n                                                Explanation:\nThe \"exec-timeout\" command is used to configure the inactive session timeout on the console port or the virtual terminal. The syntax of this command is: exec-timeout minutes [seconds]\nTherefore we need to use the \"exec-timeout 30\" command to set the user inactivity timer to 30 minutes. To set the user inactivity timer to 30 seconds we use the\n\"exec-timeout 0 30\".\nReference:\nhttp://www.cisco.com/c/m/en_us/techdoc/dc/reference/cli/nxos/commands/fund/exec-timeout.html",
+        "choice": "B"
+      },
+      "with_images": false
+    },
+    {
+      "title": "Question 3",
+      "content": "A network administrator has a multi-floor LAN to monitor and maintain. Through careful monitoring, the administrator has noticed a large amount of broadcast traffic slowing the network. Which device would you use to best solve this problem?",
+      "choices": [
+        {
+          "name": "A",
+          "content": "router"
+        },
+        {
+          "name": "B",
+          "content": "switch"
+        },
+        {
+          "name": "C",
+          "content": "host"
+        },
+        {
+          "name": "D",
+          "content": "server"
+        }
+      ],
+      "with_images": false,
+      "answer": {
+        "choice": "A",
+        "content": "A.\n\nExplanation: All hosts within a single LAN belong to one broadcast domain. As the number of hosts increase, it could cause more traffic on the segment and may slow network performance. To solve the performance issue, a router would be the device used to segment the single LAN into multiple LANs."
+      }
+    },
+    {
+      "title": "Question 4",
+      "content": "Which result occurs when you configure the standby preempt command on an HSRP router that has the same priority as the active router and a higher IP address?",
+      "choices": [
+        {
+          "name": "A",
+          "content": "The router becomes the active router only when the current active router fails"
+        },
+        {
+          "name": "B",
+          "content": "The router fails to become the active router under any circumstances"
+        },
+        {
+          "name": "C",
+          "content": "The router immediately becomes the active router because it has the highest configured IP address"
+        },
+        {
+          "name": "D",
+          "content": "The router becomes the active router only when another router triggers renegotiation of the active router"
+        }
+      ],
+      "answer": {
+        "content": "<b>A</b>\n                                                Explanation:\nA standby router with equal priority but a higher IP address will not preempt the active router\nReference:\nhttps://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipapp_fhrp/configuration/15-sy/fhp-15-sy-book/fhp-hsrp.pdf",
+        "choice": "A"
+      },
+      "with_images": false
+    },
+    {
+      "title": "Question 5",
+      "content": "Which statement describes VRRP object tracking?",
+      "choices": [
+        {
+          "name": "A",
+          "content": "It monitors traffic flow and link utilization."
+        },
+        {
+          "name": "B",
+          "content": "It ensures the best VRRP router is the virtual router master for the group."
+        },
+        {
+          "name": "C",
+          "content": "It causes traffic to dynamically move to higher bandwidth links."
+        },
+        {
+          "name": "D",
+          "content": "It thwarts man-in-the-middle attacks."
+        }
+      ],
+      "answer": {
+        "content": "<b>B</b>\n                                                Explanation:\nVRRP object tracking provides a way to ensure the best VRRP router is virtual router master for the group by altering VRRP priorities to the status of tracked objects such as interface or IP route states.\nReference:\nhttp://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipapp_fhrp/configuration/xe-3s/fhp-xe-3sbook/fhp-vrrp.html",
+        "choice": "B"
+      },
+      "with_images": false
+    }
+  ]
+}

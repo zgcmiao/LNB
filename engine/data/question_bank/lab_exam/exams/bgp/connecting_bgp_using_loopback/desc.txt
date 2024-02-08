@@ -1,0 +1,2 @@
+Configure a BGP neighbor relationship between R1, R2 and R3. All routers should beconfigured in AS 100. Establish the neighbor relationship based on Loopback 0 addresses. 
+Configure EIGRP as the routing protocol in AS 100. Advertise all loopback networks under EIGRP.

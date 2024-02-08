@@ -1,0 +1,31 @@
+{
+  "name": "Computer Network",
+  "examples": [
+    {
+      "exam_id": "shot-examples",
+      "question_id": "Question 1"
+    },
+    {
+      "exam_id": "shot-examples",
+      "question_id": "Question 2"
+    },
+    {
+      "exam_id": "shot-examples",
+      "question_id": "Question 3"
+    },
+    {
+      "exam_id": "shot-examples",
+      "question_id": "Question 4"
+    },
+    {
+      "exam_id": "shot-examples",
+      "question_id": "Question 5"
+    }
+  ],
+  "exam_files": [
+    "question_bank/written_exam/mcq_rag_wiki.json"
+  ],
+  "example_files": [
+    "metadata/shot-examples.json"
+  ]
+}

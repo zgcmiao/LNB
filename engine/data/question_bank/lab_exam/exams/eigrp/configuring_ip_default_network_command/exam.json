@@ -1,0 +1,43 @@
+{
+    "exam_type": "configuring_ip_default_network_command",
+    "topo_info":
+    {
+        "nodes": ["R1", "R2", "R3"],
+        "nodes_info": 
+        {
+            "R1": 
+            {
+                "interfaces": ["R1-S0", "R1-E0"],
+                "interface_IP":
+                {
+                    "R1-S0": "1.1.1.1/8",
+                    "R1-E0": "10.1.1.1/8"
+                }
+            },
+            "R2": 
+            {
+                "interfaces": ["R2-S0", "R2-S1", "R2-E0"],
+                "interface_IP":
+                {
+                    "R2-S0": "1.1.1.2/8",
+                    "R2-S1": "2.2.2.1/8",
+                    "R2-E0": "20.1.1.1/8"
+                }
+            },
+            "R3": 
+            {
+                "interfaces": ["R3-S0", "R3-E0"],
+                "interface_IP":
+                {
+                    "R3-S0": "2.2.2.2/8",
+                    "R3-E0": "30.1.1.1/8"
+                }
+            }
+        },
+        "links_info": ["R1-S0<->R2-S1", "R2-S0<->R3-S0"]
+    },
+    "exam_description": ["Configure EIGRP on all nodes according to topology description. Advertise all networks on all nodes except that do not advertise network 30.0.0.0/8 in R3's EIGRP process.",
+                        "Configure R1-S0, R1-E0, R2-S1, R2-S0, R2-E0 in EIGRP AS 100 and R3-S0 in EIGRP AS 200.",
+                        "Configure defaulte route on R2 such that defaulte routes go through 2.2.2.2"]
+
+}

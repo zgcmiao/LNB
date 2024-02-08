@@ -1,0 +1,24 @@
+# syntax=docker/dockerfile:1.2
+
+FROM nvidia/cuda:12.2.0-runtime-ubuntu22.04
+
+ARG PYTHONPATH
+ENV PYTHONPATH=${PYTHONPATH}
+
+RUN sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list  \
+    && sed -i s/security.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list  \
+    && apt-get -y update
+
+RUN apt-get install -y \
+    python3-pip \
+    vim
+
+WORKDIR /llm-bench/
+
+COPY requirements.txt .
+
+RUN --mount=type=cache,mode=0755,target=/root/.cache/pip pip install -r requirements-mixtral.txt -i https://mirrors.aliyun.com/pypi/simple
+
+COPY . .
+
+CMD ["python3"]

@@ -1,0 +1,52 @@
+{
+    "exam_type": "configure_route_ospf_summarization",
+    "topo_info":
+    {
+        "nodes": ["R1", "R2", "R3"],
+        "nodes_info": 
+        {
+            "R1": 
+            {
+                "interfaces": ["R1-S0", "R1-S1", "R1-E0"],
+                "interface_IP":
+                {
+                    "R1-S0": "1.1.1.1/8",
+                    "R1-S1": "3.3.3.1/8",
+                    "R1-E0": "10.1.1.1/8"
+                }
+            },
+            "R2": 
+            {
+                "interfaces": ["R2-S0", "R2-S1", "R2-E0"],
+                "interface_IP":
+                {
+                    "R2-S0": "1.1.1.2/8",
+                    "R2-S1": "2.2.2.1/8",
+                    "R2-E0": "20.1.1.1/8"
+                }
+            },
+            "R3": 
+            {
+                "interfaces": ["R3-S0", "R3-S1", "R3-E0"],
+                "interface_IP":
+                {
+                    "R3-S0": "2.2.2.2/8",
+                    "R3-S1": "3.3.3.2/8",
+                    "R3-E0": "30.1.1.1/8"
+                }
+            }
+        },
+        "links_info": ["R1-S0<->R2-S0", "R1-S1<->R3-S1", "R2-S1<->R3-S0"]
+    },
+    "exam_description": {
+        "basic": ["Configure BGP neighbor relationship between R1, R2 and R3.\nR1 should be in AS 200, R2 should be in AS 100 and R3 should be in AS 200. Advertise all subnetworks on all nodes."],
+        "middle": ["Configure BGP neighbor relationship between R1, R2 and R3.\nR1 should be in AS 200, R2 should be in AS 100 and R3 should be in AS 200. Advertise all subnetworks on all nodes.",
+        "Create the following Loopbacks on R3:  R3-lo:172.168.0.1/24,   R3-lo1:172.168.1.1/24,   R3-lo2:172.168.2.1/24,   R3-lo3:172.168.3.1/24",
+        "Advertise these newly created loopbacks in OSPF using the network command 'ip ospf network point-to-point'. Make sure they appear in the routing table using a /24 mask.", 
+        "These routes should be seen as a single summarized route as 172.168.0.0/22 outside of area 1."],
+        "hard": ["Configure BGP neighbor relationship between R1, R2 and R3.\nR1 should be in AS 200, R2 should be in AS 100 and R3 should be in AS 200. Advertise all subnetworks on all nodes.",
+        "Create the following Loopbacks on R3:  R3-lo:172.168.0.1/24,   R3-lo1:172.168.1.1/24,   R3-lo2:172.168.2.1/24,   R3-lo3:172.168.3.1/24",
+        "Advertise these newly created loopbacks in OSPF using the network command such they appear in the routing table using a /24 mask.", 
+        "These routes should be seen as a single summarized route as 172.168.0.0/22 outside of area 1."]
+    }
+}

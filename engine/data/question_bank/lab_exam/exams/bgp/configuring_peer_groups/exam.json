@@ -1,0 +1,56 @@
+{
+    "exam_type": "configuring_peer_groups",
+    "topo_info":
+    {
+        "nodes": ["R1", "R2", "R3", "R4"],
+        "nodes_info": 
+        {
+            "R1": 
+            {
+                "interfaces": ["R1-S0", "R1-E0"],
+                "interface_IP":
+                {
+                    "R1-S0": "3.3.3.1/8",
+                    "R1-E0": "10.1.1.1/8"
+                }
+            },
+            "R2": 
+            {
+                "interfaces": ["R2-S0", "R2-S1", "R2-S2", "R2-E0"],
+                "interface_IP":
+                {
+                    "R2-S0": "3.3.3.2/8",
+                    "R2-S1": "1.1.1.1/8",
+                    "R2-S2": "2.2.2.1/8",
+                    "R2-E0": "20.1.1.1/8",
+                    "lo": "7.7.7.7/32"
+                }
+            },
+            "R3": 
+            {
+                "interfaces": ["R3-S0", "R3-E0"],
+                "interface_IP":
+                {
+                    "R3-S0": "2.2.2.2/8",
+                    "R3-S1": "3.3.3.2/8",
+                    "R3-E0": "30.1.1.1/8",
+                    "lo": "8.8.8.8/32"
+                }
+            },
+            "R4": 
+            {
+                "interfaces": ["R4-S0", "R4-E0"],
+                "interface_IP":
+                {
+                    "R4-S0": "2.2.2.2/8",
+                    "R4-E0": "40.1.1.1/8",
+                    "lo": "6.6.6.6/32"
+                }
+            }
+        },
+        "links_info": ["R1-S0<->R2-S0", "R2-S1<->R3-S0", "R2-S2<->R4-S0"]
+    },
+    "exam_description": ["Configure BGP on all the routers. Configure R1 in AS 200 and configure R2, R3 and R4 in AS 100.",
+                        "Configure the loopbacks as per the scenario and advertise in BGP. Also configure route-map blocking network 10.0.0.0 from being advertised to iBGP peers.",
+                        "Use peer-group command to accomplish these tasks such that reduce the number of statements in the configuration."]
+}

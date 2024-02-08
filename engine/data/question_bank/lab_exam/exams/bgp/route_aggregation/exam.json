@@ -1,0 +1,67 @@
+{
+    "exam_type": "route_aggregation",
+    "topo_info":
+    {
+        "nodes": ["R1", "R2", "R3", "R4"],
+        "nodes_info": 
+        {
+            "R1": 
+            {
+                "interfaces": ["R1-S0", "R1-E0"],
+                "interface_IP":
+                {
+                    "R1-S0": "3.3.3.1/8",
+                    "R1-E0": "10.1.1.1/8"
+                }
+            },
+            "R2": 
+            {
+                "interfaces": ["R2-S0", "R2-S1", "R2-S2", "R2-E0"],
+                "interface_IP":
+                {
+                    "R2-S0": "3.3.3.2/8",
+                    "R2-S1": "1.1.1.1/8",
+                    "R2-S2": "2.2.2.1/8",
+                    "R2-E0": "20.1.1.1/8"
+                }
+            },
+            "R3": 
+            {
+                "interfaces": ["R3-S0", "R3-E0", "R3-lo1", "R3-lo2", "R3-lo3", "R3-lo4", "R3-lo5"],
+                "interface_IP":
+                {
+                    "R3-S0": "1.1.1.2/8",
+                    "R3-E0": "30.1.1.1/8",
+                    "R3-lo1": "172.1.0.1/16",
+                    "R3-lo2": "172.2.0.1/16",
+                    "R3-lo3": "172.3.0.1/16",
+                    "R3-lo4": "172.4.0.1/16",
+                    "R3-lo5": "172.5.0.1/16"
+                }
+            },
+            "R4": 
+            {
+                "interfaces": ["R4-S0", "R4-E0"],
+                "interface_IP":
+                {
+                    "R4-S0": "2.2.2.2/8",
+                    "R4-E0": "40.1.1.1/8"
+                }
+            }
+        },
+        "links_info": ["R1-S0<->R2-S0", "R2-S1<->R3-S0", "R2-S2<->R4-S0"]
+    },
+    "exam_description": {
+                            "basic": ["Configure BGP on all the routers. Configure R1 in AS 100, R2 in AS 200, R3 in AS 300, R4 in AS 400.",
+                                    "Configure BGP peers between all directly connected nodes based on topology description. Each nodes advertise all the subnets of interfaces to BGP neighbors.",
+                                    "Create loopbacks on R3 as per the above scenario and advertise them under BGP: R3-lo1 --- 172.1.0.1/16, R3-lo2 --- 172.2.0.1/16, R3-lo3 --- 172.3.0.1/16, R3-lo4 --- 172.4.0.1/16, R3-lo5 --- 172.5.0.1/16"],
+                            "middle": ["Configure BGP on all the routers. Configure R1 in AS 100, R2 in AS 200, R3 in AS 300, R4 in AS 400.",
+                                    "Configure BGP peers between all directly connected nodes based on topology description. Each nodes advertise all the subnets of interfaces to BGP neighbors.",
+                                    "Create loopbacks on R3 as per the above scenario and advertise them under BGP: R3-lo1 --- 172.1.0.1/16, R3-lo2 --- 172.2.0.1/16, R3-lo3 --- 172.3.0.1/16, R3-lo4 --- 172.4.0.1/16, R3-lo5 --- 172.5.0.1/16",
+                                    "Configure Route Aggregation on R3 such that routes of all 5 loopbacks are summarized as a single route:172.0.0.0/13. Use Aggregate-address command"],
+                            "hard": ["Configure BGP on all the routers. Configure R1 in AS 100, R2 in AS 200, R3 in AS 300, R4 in AS 400.",
+                                    "Configure BGP peers between all directly connected nodes based on topology description. Each nodes advertise all the subnets of interfaces to BGP neighbors.",
+                                    "Create loopbacks on R3 as per the above scenario and advertise them under BGP: R3-lo1 --- 172.1.0.1/16, R3-lo2 --- 172.2.0.1/16, R3-lo3 --- 172.3.0.1/16, R3-lo4 --- 172.4.0.1/16, R3-lo5 --- 172.5.0.1/16",
+                                    "Configure Route Aggregation and route-map on R3 such that only routes 172.4.0.1/16 and 172.5.0.1/16 are summarized as a single route: 172.0.0.0/13, and the other 3 loopback routes are still advertised to R3's neighbors."]
+                        }
+}

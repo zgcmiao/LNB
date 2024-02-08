@@ -1,0 +1,3 @@
+Configure a BGP neighbor relationship between R1 and R2. R1 should be configured in
+AS 100 and R2 should be in AS 200. Establish the neighbor relationship between peers
+using loopbacks. Create a static route on each router to accomplish this task.

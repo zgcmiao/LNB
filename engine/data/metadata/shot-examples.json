@@ -1,0 +1,145 @@
+{
+  "id": "shot-examples",
+  "title": "shot-examples",
+  "questions": [
+    {
+      "title": "Question 1",
+      "content": "A junior analyst is trying to use the tcpdump -i eth1 command on an Ubuntu system, but it is not working. What could be the problem?",
+      "choices": [
+        {
+          "name": "A",
+          "content": "The tcpdump command requires root level privilege."
+        },
+        {
+          "name": "B",
+          "content": "The tcpdump command requires the Ethernet adapter to be in non-promiscuous mode."
+        },
+        {
+          "name": "C",
+          "content": "The tcpdump command -i option used to specify the interface is an invalid option."
+        },
+        {
+          "name": "D",
+          "content": "The tcpdump command used is missing some of the required options (such as -n and -v)."
+        }
+      ],
+      "answer": {
+        "content": "<b>A</b>",
+        "choice": "A"
+      },
+      "with_images": false
+    },
+    {
+      "title": "Question 2",
+      "content": "Which control plane protocol is used between Cisco SD-WAN routers and vSmart controllers?",
+      "choices": [
+        {
+          "name": "A",
+          "content": "TCP"
+        },
+        {
+          "name": "B",
+          "content": "OMP"
+        },
+        {
+          "name": "C",
+          "content": "UDP"
+        },
+        {
+          "name": "D",
+          "content": "BGP"
+        }
+      ],
+      "answer": {
+        "content": "<b>B</b>",
+        "choice": "B"
+      },
+      "with_images": false
+    },
+    {
+      "title": "Question 3",
+      "content": "If an attacker uses phishing to obtain user credentials for an employee without administrator access and needs to install a rootkit backdoor that requires system level access, what might be the attacker's next course of action to gain the administrator privileges?",
+      "choices": [
+        {
+          "name": "A",
+          "content": "set a scheduled task to install the rootkit the following day under the current user account"
+        },
+        {
+          "name": "B",
+          "content": "try to brute force that user's password for an RDP connection to the user's workstation"
+        },
+        {
+          "name": "C",
+          "content": "change the IP address of the user's computer from DHCP-assigned to static."
+        },
+        {
+          "name": "D",
+          "content": "attempt to extract local administrator credentials stored on the machine in running memory or the registry"
+        }
+      ],
+      "answer": {
+        "content": "<b>D</b>",
+        "choice": "D"
+      },
+      "with_images": false
+    },
+    {
+      "title": "Question 4",
+      "content": "Why is a transparent firewall considered a \"bump in the wire\" or \"stealth firewall\"?",
+      "choices": [
+        {
+          "name": "A",
+          "content": "It is a bump on the wire because it filters packets at the OSI physical layer."
+        },
+        {
+          "name": "B",
+          "content": "Using separate IP subnets for inside and outside interfaces, packets are inspected quietly."
+        },
+        {
+          "name": "C",
+          "content": "A transparent firewall is considered a Layer 2 firewall and has no routing capabilities."
+        },
+        {
+          "name": "D",
+          "content": "Transparent firewalls work in \"stealth mode\" by using network taps."
+        },
+        {
+          "name": "E",
+          "content": "Because transparent firewalls can route between inside and outside interfaces, packets are \"bumped\" between them by using special firewall rule-sets."
+        }
+      ],
+      "answer": {
+        "content": "<b>C</b>",
+        "choice": "C"
+      },
+      "with_images": false
+    },
+    {
+      "title": "Question 5",
+      "content": "If a windows host is under DoS attack, what tool can be used to monitor the current CPU and memory usage?",
+      "choices": [
+        {
+          "name": "A",
+          "content": "resource monitor"
+        },
+        {
+          "name": "B",
+          "content": "device manager"
+        },
+        {
+          "name": "C",
+          "content": "msconfig"
+        },
+        {
+          "name": "D",
+          "content": "netstat"
+        }
+      ],
+      "answer": {
+        "content": "<b>A</b>",
+        "choice": "A"
+      },
+      "with_images": false
+    }
+  ]
+}
